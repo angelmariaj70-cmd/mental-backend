@@ -74,9 +74,10 @@ console.log("UPDATED DOC:", doctorPayment);
         quantity: 1,
       },
     ];
+    const roomId = Date.now().toString();
     const session = await Stripe.checkout.sessions.create({
       payment_method_types: ["card"],
-   success_url: `https://mental-frontend-five.vercel.app/payment-success?room=${doctorDetails._id}`,
+success_url: `https://mental-frontend-five.vercel.app/payment-success?room=${roomId}`,
       cancel_url: "https://mental-frontend-five.vercel.app/payment-error",
       line_items,
       mode: "payment",
