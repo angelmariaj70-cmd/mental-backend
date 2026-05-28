@@ -31,7 +31,7 @@ exports.viewSingleDoctor=async(req,res)=>{
 }
 exports.makePayment=async(req,res)=>{
   console.log("Inside payment");
-  const email=req.payload
+ const email = req.payload.email
   const {doctorDetails}=req.body
   console.log("ID:", doctorDetails?._id);
   
